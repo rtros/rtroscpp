@@ -1,0 +1,50 @@
+++ test_all.cpp -I/usr/realtime/include -I rtai_thread -o test_all -L/usr/realtime/lib
+In file included from rtai_thread/rtai_thread.h:10:0,
+                 from test_all.cpp:1:
+rtai_thread/rtai_thread_detail.hpp:219:24: error: expected nested-name-specifier before ‘disable_if_c’
+             , typename disable_if_c<
+                        ^
+rtai_thread/rtai_thread_detail.hpp:219:36: error: expected ‘,’ or ‘...’ before ‘<’ token
+             , typename disable_if_c<
+                                    ^
+rtai_thread/rtai_thread_detail.hpp:289:20: error: expected nested-name-specifier before ‘disable_if_c’
+         , typename disable_if_c<
+                    ^
+rtai_thread/rtai_thread_detail.hpp:289:32: error: expected ‘,’ or ‘...’ before ‘<’ token
+         , typename disable_if_c<
+                                ^
+rtai_thread/rtai_thread_detail.hpp:301:24: error: expected nested-name-specifier before ‘disable_if’
+             , typename disable_if<boost::thread_detail::is_rv<F>, dummy* >::type=0
+                        ^
+rtai_thread/rtai_thread_detail.hpp:301:34: error: expected ‘,’ or ‘...’ before ‘<’ token
+             , typename disable_if<boost::thread_detail::is_rv<F>, dummy* >::type=0
+                                  ^
+rtai_thread/rtai_thread_detail.hpp:311:20: error: expected nested-name-specifier before ‘disable_if’
+         , typename disable_if<is_same<typename decay<F>::type, thread>, dummy* >::type=0
+                    ^
+rtai_thread/rtai_thread_detail.hpp:311:30: error: expected ‘,’ or ‘...’ before ‘<’ token
+         , typename disable_if<is_same<typename decay<F>::type, thread>, dummy* >::type=0
+                              ^
+rtai_thread/rtai_thread_detail.hpp:384:35: error: expected nested-name-specifier before ‘disable_if’
+         thread(F f,A1 a1,typename disable_if<boost::thread_detail::is_convertible<F&,thread_attributes >, dummy* >::type=0):
+                                   ^
+rtai_thread/rtai_thread_detail.hpp:384:45: error: expected ‘,’ or ‘...’ before ‘<’ token
+         thread(F f,A1 a1,typename disable_if<boost::thread_detail::is_convertible<F&,thread_attributes >, dummy* >::type=0):
+                                             ^
+rtai_thread/rtai_thread_detail.hpp: In member function ‘bool rtai_thread::thread::try_join_until(const boost::chrono::time_point<Clock, Duration1>&)’:
+rtai_thread/rtai_thread_detail.hpp:483:55: error: ‘boost::system_clock’ has not been declared
+           system_clock::time_point     s_now = boost::system_clock::now();
+                                                       ^
+In file included from /usr/local/include/boost/thread/lock_types.hpp:11:0,
+                 from rtai_thread/rtai_mutex.hpp:13,
+                 from rtai_thread/rtai_thread.h:4,
+                 from test_all.cpp:1:
+rtai_thread/rtai_thread_detail.hpp: At global scope:
+rtai_thread/rtai_thread_detail.hpp:597:5: error: ‘enable_move_utility_emulation’ is not a class template
+     BOOST_THREAD_DCL_MOVABLE(thread)
+     ^
+rtai_thread/rtai_thread_detail.hpp:597:5: error: explicit specialization of non-template ‘rtai_thread::enable_move_utility_emulation’
+     BOOST_THREAD_DCL_MOVABLE(thread)
+     ^
+make: *** [all] Error 1
+root@ubuntu:/home/xgwang/ws/rtai_test/playground#
