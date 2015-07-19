@@ -480,7 +480,7 @@ namespace rtai_thread
         bool try_join_until(const boost::chrono::time_point<Clock, Duration>& t)
         {
           using namespace boost::chrono;
-          system_clock::time_point     s_now = boost::system_clock::now();
+          boost::system_clock::time_point     s_now = boost::system_clock::now();
           bool joined= false;
           do {
             typename Clock::duration   d = ceil<nanoseconds>(t-Clock::now());
